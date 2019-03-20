@@ -10,7 +10,7 @@ import threading
 parser = argparse.ArgumentParser(description='backtest npm-scan on past packages.', prog='npm-scan-backtest')
 parser.add_argument('-s', '--start', help='Starting UNIX timestamp')
 parser.add_argument('-e', '--end', help='Ending UNIX timestamp')
-parser.add_argument('-i', '--increment', help='Batch increment size')
+parser.add_argument('-i', '--increment', help='Batch increment size', type=int)
 parser.add_argument('-l', '--log', help='Log scans', default=False, action='store_true')
 args = parser.parse_args()
 
