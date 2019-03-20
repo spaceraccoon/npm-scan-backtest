@@ -1,0 +1,4 @@
+[submodule "npm-scan"]
+	path = npm-scan
+	url = https://github.com/spaceraccoon/npm-scan.git
+	branch = npm-scan-server
