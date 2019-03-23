@@ -23,11 +23,12 @@ def extract(current_step, package_name, package_version, file_path):
     tar = tarfile.open(file_path)
     tar.extractall(dest)
     tar.close()
-    files_list = os.listdir(os.path.join(dest, 'package'))
+    inner_dir = os.listdir(dest)[0]
+    files_list = os.listdir(os.path.join(dest, inner_dir))
     for files in files_list:
-        src = os.path.join(dest, 'package', files)
+        src = os.path.join(dest, inner_dir, files)
         shutil.move(src, dest)
-    os.rmdir(os.path.join(dest, 'package'))
+    os.rmdir(os.path.join(dest, inner_dir))
     os.remove(file_path)
 
 def download(package_name, package_version, file_path):
